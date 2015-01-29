@@ -1,0 +1,21 @@
+<div id="tflDiv"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    $(function () {
+
+        var processUrl = function (url) {
+            if (url.length >= 4 && url.slice(0, 4) === "/tfl") {
+                return 'http://www.tfl.gov.uk' + url;
+            };
+            return url;
+        };
+
+        $("#tflDiv").load("http://www.tfl.gov.uk/tfl/syndication/feeds/serviceboard-fullscreen.htm", function() {
+            $('#tflDiv a').each(function () {
+                $(this).attr("href", processUrl($(this).attr("href")));
+            });
+        });
+    });
+
+</script>

@@ -16,11 +16,24 @@
             return url;
         };
 
-        $("#tflDiv").load("http://www.tfl.gov.uk/tfl/syndication/feeds/serviceboard-fullscreen.htm", function() {
-            $('#tflDiv a').each(function () {
+
+    $.ajax("http://www.tfl.gov.uk/tfl/syndication/feeds/serviceboard-fullscreen.htm", {
+        cache: false,
+        dataType:"html",
+        success: function(data, textStatus, jqXHR) {
+            $("#tflDiv").html(data);
+	            $('#tflDiv a').each(function () {
                 $(this).attr("href", processUrl($(this).attr("href")));
             });
-        });
+        },
+    });
+
+
+//        $("#tflDiv").load("http://www.tfl.gov.uk/tfl/syndication/feeds/serviceboard-fullscreen.htm", function() {
+//            $('#tflDiv a').each(function () {
+//                $(this).attr("href", processUrl($(this).attr("href")));
+//            });
+//        });
     });
 
 </script>

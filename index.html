@@ -6,13 +6,12 @@
     <title>TV Channels</title>
     <style>
         .tv-channel {
-            background-color: green;
             margin: 10px;
-            display: inline-block;
-            width: 100px;
+            display: inline;
+            float: left;
         }
         .tv-channel img {
-            max-width: 100%;
+            max-width: 200px;
             max-height: 100%;
         }
     </style>
@@ -22,8 +21,6 @@
 
     <div ng-controller="channelsCtrl">
         <div ng-repeat="channel in channels">
-            {{channel.img}}
-
             <a ng-href="{{channel.url}}">
                 <div class="tv-channel">
                     <img src="{{channel.img}}" />

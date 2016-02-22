@@ -1,23 +1,55 @@
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+
+<html ng-app="app">
+<head>
+    <title>TV Channels</title>
+    <style>
+        .tv-channel {
+            background-color: green;
+            margin: 10px;
+            display: inline-block;
+            width: 100px;
+        }
+        .tv-channel img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
 <body>
+    <h1>TV Channels</h1>
 
+    <div ng-controller="channelsCtrl">
+        <div ng-repeat="channel in channels">
+            {{channel.img}}
 
-<div style="z-index=2; position:absolute;">
-    <iframe x name="tfl_serviceboard" width="286" height="386" id="tfl_serviceboard_stretchy" src="http://www.tfl.gov.uk/tfl/syndication/feeds/serviceboard-fullscreen.htm" frameborder="no" marginwidth="0" marginheight="0" scrolling="auto"></iframe>
-</div>
+            <a ng-href="{{channel.url}}">
+                <div class="tv-channel">
+                    <img src="{{channel.img}}" />
+                </div>
+            </a>
+        </div>
+    </div>
 
-<!--[if lte IE 8]>
-    <div style="z-index=1; background-color: white; filter: alpha(opacity = 20); zoom:1; display: block; position:absolute; width:286px; height: 386px;">
-<![endif]-->
+    <!--<a href="http://www.bbc.co.uk/iplayer/live/bbcone">
+        <div class="tv-channel">
+            <img src="bbc1.png" />
+        </div>
+    </a>
 
+    <a href="http://www.bbc.co.uk/iplayer/live/bbctwo">
+        <div class="tv-channel">
+            <img src="bbc2.png" />
+        </div>
+    </a>
+    <a href="http://www.bbc.co.uk/iplayer/live/bbcthree">
+        <div class="tv-channel">
+            <img src="bbc3.png" />
+        </div>
+    </a>-->
 
-
-</div>
-
-
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
 </body>
-
-
 </html>

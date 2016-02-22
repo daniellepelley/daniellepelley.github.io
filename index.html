@@ -5,48 +5,43 @@
 <head>
     <title>TV Channels</title>
     <style>
-        .tv-channel {
-            margin: 10px;
-            display: inline;
-            float: left;
+        .dashboard {
+             display: block;  
+             width:auto;          
         }
+         .tv-channel {
+             padding: 10px;
+             display: table-cell;
+             height: 150px;
+         }
         .tv-channel img {
-            max-width: 200px;
-            max-height: 100%;
+            max-width: 100%;
+            max-height: 150px;
+        }
+        .provider {
+            display: table-row;            
         }
     </style>
 </head>
 <body>
     <h1>TV Channels</h1>
 
-    <div ng-controller="channelsCtrl">
-        <div ng-repeat="channel in channels">
-            <a ng-href="{{channel.url}}">
-                <div class="tv-channel">
-                    <img src="{{channel.img}}" />
+    <div class="dashboard">
+        <div ng-controller="channelsCtrl">
+            <div class="provider" ng-repeat="provider in providers">
+                <h1>{{station.title}}</h1>
+                <div class="tv-channel" ng-repeat="channel in provider.channels">
+                    <a ng-href="{{channel.url}}">
+                        <div>
+                            <img src="{{channel.img}}" />
+                        </div>
+                    </a>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 
-    <!--<a href="http://www.bbc.co.uk/iplayer/live/bbcone">
-        <div class="tv-channel">
-            <img src="bbc1.png" />
-        </div>
-    </a>
-
-    <a href="http://www.bbc.co.uk/iplayer/live/bbctwo">
-        <div class="tv-channel">
-            <img src="bbc2.png" />
-        </div>
-    </a>
-    <a href="http://www.bbc.co.uk/iplayer/live/bbcthree">
-        <div class="tv-channel">
-            <img src="bbc3.png" />
-        </div>
-    </a>-->
-
-    <script src="angular.min.js"></script>
+<script src="angular.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

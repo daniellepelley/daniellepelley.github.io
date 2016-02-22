@@ -11,8 +11,8 @@ app.controller("channelsCtrl", function($scope) {
             img: "bbc2.png"
         },
         {
-            url: "http://www.bbc.co.uk/iplayer/live/bbcthree",
-            img: "bbc3.png"
+            url: "http://www.bbc.co.uk/iplayer/live/bbcnews",
+            img: "bbcnews.png"
         }
     ];
 });

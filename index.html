@@ -21,6 +21,12 @@
         .provider {
             display: table-row;            
         }
+        .provider h2 {
+            background-color: black;
+            color: white;
+            display: table-row;
+            width: 100%;         
+        }
     </style>
 </head>
 <body>
@@ -29,7 +35,7 @@
     <div class="dashboard">
         <div ng-controller="channelsCtrl">
             <div class="provider" ng-repeat="provider in providers">
-                <h1>{{station.title}}</h1>
+                <!--<h2>{{provider.title}}</h2>-->
                 <div class="tv-channel" ng-repeat="channel in provider.channels">
                     <a ng-href="{{channel.url}}">
                         <div>
